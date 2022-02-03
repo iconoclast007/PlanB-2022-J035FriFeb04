@@ -1,0 +1,186 @@
+\documentclass[letterpaper,10pt]{book}
+% Change to 10 pt
+\usepackage{pdfpages}
+\usepackage{morewrites}			% to counteract the no write space problem
+\setcounter{tocdepth}{6}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{fancyhdr}
+
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{datetime}
+%\usepackage{ulem}
+
+%\usepackage[nottoc]{toobibind}
+
+\usepackage[inline]{enumitem}
+
+% Outer margin at 2.50 is exacty correct to fit the ``corruption alert'' tables
+\usepackage[inner=1.0in, outer=2.50in, top=2.54cm,bottom=2.54cm, marginparwidth=2.25in]{geometry}
+
+\usepackage{marginnote}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\usepackage{soul}
+
+%%%%%%%%%%%%
+\definecolor{ForestGreen}{rgb}{0.00,0.29,0.098}
+%%%%%%%%%%%%
+
+\usepackage{marginnote}
+
+\usepackage{imakeidx} 
+\usepackage[
+	backref=true,
+	style=numeric,
+%	citestyle=numeric,
+	backend=bibtex
+	]{biblatex}
+\usepackage[driverfallback=hypertex,colorlinks=True]{hyperref}
+\usepackage{cleveref}
+
+\makeindex[name=scripture,columnsep=20pt, columnseprule=True,columns=3, title=Scripture References]
+\makeindex[name=speaker,columnsep=20pt, columnseprule=True,,columns=2, title=Sermon Creator]
+\makeindex[name=series,columnsep=20pt, columnseprule=True,,columns=2, title=Sermon Series]
+\makeindex[name=date,columnsep=20pt, columnseprule=True,columns=2, title=Sermon Date]
+\makeindex[name=event,columnsep=20pt, columnseprule=True,columns=2, title=Event]
+\makeindex[name=topic,columnsep=20pt, columnseprule=True,columns=2, title=Topic]
+\makeindex[name=AWIP,columnsep=20pt, columnseprule=True,columns=3, title=All Words in Passage]
+\makeindex[name=NWIV,columnsep=20pt, columnseprule=True,columns=3, title=Number of Words in Verse]
+\makeindex[name=PNIP,columnsep=20pt, columnseprule=True,columns=3, title=Proper Names in Passage]
+\makeindex[name=PEIP,columnsep=20pt, columnseprule=True,columns=2, title=Prophetic Events in Passage]
+\makeindex[name=TWPAQ,columnsep=20pt, columnseprule=True,columns=1, title=13-Word Phrases and Quotes]
+\makeindex[name=PFTTIS,columnsep=20pt, columnseprule=False,columns=3, title=Phrases found 13 times in scripture]
+\makeindex[name=WFTTIS,columnsep=20pt, columnseprule=False,columns=3, title=Words found 13 times in scripture]
+\makeindex[name=WFITV,columnsep=20pt, columnseprule=False,columns=3, title=Words found in exactly 13 verses]
+\makeindex[name=EVENTS,columnsep=20pt, columnseprule=False,columns=2, title=Sermon Log by Place]
+\makeindex[name=QUESTIONS,columnsep=20pt, columnseprule=False,columns=2, title=Bible Questions]
+\makeindex[name=DOCTRINES,columnsep=20pt, columnseprule=False,columns=2, title=Doctrines]
+\makeindex[name=SONGS,columnsep=20pt, columnseprule=False,columns=1, title=Songs]
+\makeindex[name=LOCATION,columnsep=20pt, columnseprule=False,columns= 2, title=Location]
+\makeindex[name=FACEBOOK,columnsep=20pt, columnseprule=False,columns=2, title=Facebook]
+\makeindex[name=DEVOTIONAL,columnsep=20pt, columnseprule=False,columns=2, title=Devotional Items]
+%%%%%%%%%%%%%%%%% EXTRA COLORS
+\definecolor{champagne}{rgb}{0.97,0.91,0.81}
+\definecolor{bone}{rgb}{0.89,0.85,0.79}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\today}
+\fancyhead[RE,LO]{Daily Bible Reading}
+\fancyhead[CE,CO]{-page \thepage  - }
+
+\fancyfoot[CO,CE]{\leftmark}
+%\fancyfoot[LE,RO]{CSCE 692, HW1}
+
+\title{DBR\\
+Daily \\ Reads}
+\author{Keith Anthony \\
+\today }
+%+/ffffff +   \pagenumbering{gobble}
+\bibliography{Bibliographies/All20220108}
+
+\setlength{\fboxsep}{1.0pt}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+
+\begin{document}
+%%%%%%%%%%%% Tile Page
+
+\begin{titlepage}
+
+\begin{flushright}
+\rightskip=-2.5cm
+\includegraphics[width=50mm,scale=1.5]{Extras/Melchisedec.jpg}
+\vspace{0.4in}  % Create a title for the document and write it in bold font
+\LARGE{\textbf{\date}} % Again, do a line break
+\linebreak 
+% Create a subtitle \large{with Outlines, Statistics, Cross References, and Notes}
+\vspace{0.5in}
+\begin{flushleft}
+\LARGE{Day \#35: Friday, 4 February 2022 LITE  \\}\vspace{0.25in}
+\LARGE{Leviticus 10-12 Psalm 35 Proverb 4}
+\end{flushleft}
+\vspace{0.6in}
+\bigskip
+
+\normalsize{Xenia, Oh.\\}
+\normalsize{created: \today}
+\vspace{1.3in}
+
+\end{flushright}
+\end{titlepage}
+
+%\titleJE
+\newpage 
+\tableofcontents\hypertarget{TOC}{}
+
+\hyphenation{A-bim-e-lech bre-thren E-phra-im  Gib-e-o-nites Jer-u-sa-lem through-out Phil-i-stines The-o-phil-us Am-a-le-kites ven-geance Mesh-el-e-mi-ah onan-ism Phar-a-oh thoughts grev-ous-ness Hach-a-liah adul-ter-er Shad-rach}
+
+\input{Extras/colors}
+\input{Extras/MyFrames}
+\input{Extras/PFTTIS}
+\input{Extras/WFTTIS}
+\input{Extras/WFITV}
+\input{Extras/MessageTemplate}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{02OT-Exodus/ExodusIntroduction}
+\input{03OT-Leviticus/LeviticusGraphics}
+
+\input{03OT-Leviticus/Leviticus10-TextExtrasWHighlights}
+\input{03OT-Leviticus/Leviticus10-WordIndex}
+\input{03OT-Leviticus/Leviticus10-MyOutlines}
+\input{03OT-Leviticus/Leviticus10-OutlinesFromOthers}
+\input{03OT-Leviticus/Leviticus10-Comments}
+
+\input{03OT-Leviticus/Leviticus11-TextExtrasWHighlights}
+\input{03OT-Leviticus/Leviticus11-WordIndex}
+\input{03OT-Leviticus/Leviticus11-MyOutlines}
+\input{03OT-Leviticus/Leviticus11-OutlinesFromOthers}
+\input{03OT-Leviticus/Leviticus11-Comments}
+
+\input{03OT-Leviticus/Leviticus12-TextExtrasWHighlights}
+\input{03OT-Leviticus/Leviticus12-WordIndex}
+\input{03OT-Leviticus/Leviticus12-MyOutlines}
+\input{03OT-Leviticus/Leviticus12-OutlinesFromOthers}
+\input{03OT-Leviticus/Leviticus12-Comments}
+
+\input{19OT-Psalms/Psalm35-TextExtrasWHighlights}
+\input{19OT-Psalms/Psalm35-WordIndex}
+\input{19OT-Psalms/Psalm35-MyOutlines}
+\input{19OT-Psalms/Psalm35-OutlinesFromOthers}
+\input{19OT-Psalms/Psalm35-Comments}
+
+\input{20OT-Proverbs/Proverb4-TextExtrasWHighlights}
+\input{20OT-Proverbs/Proverb4-WordIndex}
+\input{20OT-Proverbs/Proverb4-MyOutlines}
+\input{20OT-Proverbs/Proverb4-OutlinesFromAcar}
+\input{20OT-Proverbs/Proverb4-OutlinesFromEades}
+\input{20OT-Proverbs/Proverb4-OutlinesFromJalla}
+\input{20OT-Proverbs/Proverb4-OutlinesFromScottThomas}
+
+\input{Extras/Template}
+\scriptsize
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Indices
+
+\chapter{Indexes}
+\printindex[DOCTRINES]
+\printindex[scripture]
+\printindex[speaker]
+%\printindex[series]
+
+
+\printbibliography
+\end{document}
+
